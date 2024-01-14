@@ -1,6 +1,4 @@
-﻿using SQLite;
-
-namespace Niko.Fire.Infrastructure;
+﻿namespace Niko.Fire.Infrastructure;
 
 public class AccountRepository(Database database)
 {
@@ -14,7 +12,7 @@ public class AccountRepository(Database database)
         return await database.Table<Account>().Where(i => i.Id == id).FirstOrDefaultAsync();
     }
 
-    public async Task<int> SaveItemAsync(Account item)
+    public virtual async Task<int> SaveItemAsync(Account item)
     {
         if (item.Id != Guid.Empty)
         {

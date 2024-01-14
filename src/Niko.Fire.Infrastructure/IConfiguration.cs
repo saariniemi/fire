@@ -2,7 +2,7 @@ namespace Niko.Fire.Infrastructure;
 
 public interface IConfiguration
 {
-    const string DatabaseFilename = "TodoSQLite.db3";
+    const string DatabaseFilename = "LocalStorage.db3";
 
     SQLite.SQLiteOpenFlags Flags =>
         // open the database in read/write mode
