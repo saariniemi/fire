@@ -1,14 +1,14 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.ApplicationModel;
 
 namespace Niko.Fire.Infrastructure;
 
 public static class DatabaseServiceCollectionExtensions
 {
-    public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddDatabase(this IServiceCollection services)
     {
-        services.AddSingleton(Database.Create(configuration));
         services.AddSingleton<AccountRepository>();
-
+        
         return services;
     }
 }

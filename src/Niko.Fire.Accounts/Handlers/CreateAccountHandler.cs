@@ -10,7 +10,7 @@ public class CreateAccountHandler(AccountRepository accountRepository) : IReques
 {
     public async Task<CreateAccountResponse> Handle(CreateAccount request, CancellationToken cancellationToken)
     {
-        var account = new Account()
+        var account = new Account
         {
             Name = request.Name
         };
