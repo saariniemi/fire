@@ -24,27 +24,30 @@ public class AccountRepository(IConfiguration configuration)
         return _database;
     }
     
-    public async Task<List<Account>> GetItemsAsync()
+    public async Task<Account?> GetByNameAsync(string name)
     {
         var database = await Init(configuration.DatabasePath);
-        return await database.Table<Account>().ToListAsync();
+        return await database.Table<Account>().FirstOrDefaultAsync(a => a.Name == name);
     }
 
-    public async Task<Account> GetItemAsync(Guid id)
+    public async Task<Account?> GetItemAsync(Guid id)
     {
         var database = await Init(configuration.DatabasePath);
         return await database.Table<Account>().Where(i => i.Id == id).FirstOrDefaultAsync();
     }
 
-    public virtual async Task<int> SaveItemAsync(Account item)
+    // TODO: REMOVE RETURN INT
+    public async Task<int> SaveItemAsync(Account item)
     {
         var database = await Init(configuration.DatabasePath);
         
         if (item.Id != Guid.Empty)
         {
+            item.Id = Guid.NewGuid();
             return await database.UpdateAsync(item);
         }
 
+        item.Id = Guid.NewGuid();
         return await database.InsertAsync(item);
     }
 

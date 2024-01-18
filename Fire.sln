@@ -11,6 +11,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{5712A1A9-DF40-41F1-B277-CB315ED2CA91}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		xunit.runner.json = xunit.runner.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Accounts.Tests", "tests\Niko.Fire.Accounts.Tests\Niko.Fire.Accounts.Tests.csproj", "{406158FF-4CA9-4B7C-950F-6CE5036276CD}"
