@@ -1,4 +1,6 @@
-﻿using Niko.Fire.Infrastructure.Constants;
+﻿using FluentValidation;
+using Niko.Fire.Infrastructure.Constants;
+using Niko.Fire.Infrastructure.Validators;
 using SQLite;
 
 namespace Niko.Fire.Infrastructure;
@@ -40,6 +42,13 @@ public class AccountRepository(IConfiguration configuration)
     public async Task<int> SaveItemAsync(Account item)
     {
         var database = await Init(configuration.DatabasePath);
+
+        var accountValidator = new AccountValidator(this);
+        var accountValidationResult = await accountValidator.ValidateAsync(item);
+        if (!accountValidationResult.IsValid)
+        {
+            throw new AccountValidationException(accountValidationResult.Errors);
+        }
         
         if (item.Id != Guid.Empty)
         {

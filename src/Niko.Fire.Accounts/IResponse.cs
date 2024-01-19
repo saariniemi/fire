@@ -14,7 +14,5 @@ public interface IResponse<TRequest>
     where TRequest : IRequest<object>
 {
     TRequest Request { get; }
-    
-    ValidationResult? ValidationResult { get;  }
 }
 

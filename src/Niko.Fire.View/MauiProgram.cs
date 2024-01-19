@@ -25,6 +25,9 @@ public static class MauiProgram
 
         builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Startup).Assembly));
 
+        // Setup Niko.Fire.Accounts
+        builder.Services.AddAccount();
+        
         // Setup Niko.Fire.Infrastructure
         builder.Services.AddSingleton<Infrastructure.IConfiguration>(new InfrastructureConfiguration());
         builder.Services.AddDatabase();

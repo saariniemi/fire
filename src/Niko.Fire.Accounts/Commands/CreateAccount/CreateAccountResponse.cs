@@ -6,7 +6,5 @@ public class CreateAccountResponse(CreateAccount request) : IResponse<CreateAcco
 {
     public CreateAccount Request => request;
 
-    public ValidationResult? ValidationResult { get; init; }
-
     public Guid Id { get; set; }
 }

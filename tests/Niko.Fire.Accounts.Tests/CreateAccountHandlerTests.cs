@@ -7,6 +7,8 @@ namespace Niko.Fire.Accounts.Tests;
 
 public class CreateAccountHandlerTests : IClassFixture<DatabaseFixture>
 {
+    private readonly CreateAccountValidator _createAccountValidator = new();
+    
     private readonly DatabaseFixture _databaseFixture;
     public CreateAccountHandlerTests(DatabaseFixture databaseFixture)
     {
@@ -19,7 +21,7 @@ public class CreateAccountHandlerTests : IClassFixture<DatabaseFixture>
         // Arrange
         var request = new CreateAccount { Name = "AVANZA" };
         
-        var sut = new CreateAccountHandler(_databaseFixture.AccountRepository);
+        var sut = new CreateAccountHandler(_databaseFixture.AccountRepository, _createAccountValidator);
 
         // Act
         var result = await sut.Handle(request, CancellationToken.None);
