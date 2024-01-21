@@ -8,6 +8,7 @@ public static class DatabaseServiceCollectionExtensions
     public static IServiceCollection AddDatabase(this IServiceCollection services)
     {
         services.AddSingleton<AccountRepository>();
+        services.AddSingleton<LoanRepository>();
         
         return services;
     }

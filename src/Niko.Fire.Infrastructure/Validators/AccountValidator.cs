@@ -1,4 +1,5 @@
 using FluentValidation;
+using FluentValidation.Results;
 
 namespace Niko.Fire.Infrastructure.Validators;
 
@@ -15,5 +16,10 @@ public class AccountValidator : AbstractValidator<Account>
             var account = await accountRepository.GetByNameAsync(name);
             return account == null;
         }
+    }
+
+    protected override void RaiseValidationException(ValidationContext<Account> context, ValidationResult result)
+    {
+        throw new AccountValidationException(result.Errors);
     }
 }

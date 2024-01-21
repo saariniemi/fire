@@ -8,3 +8,4 @@ public class CreateAccountResponse(CreateAccount request) : IResponse<CreateAcco
 
     public Guid Id { get; set; }
 }
+

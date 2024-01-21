@@ -1,6 +1,6 @@
+using FluentValidation;
 using MediatR;
 using Niko.Fire.Infrastructure;
-using Niko.Fire.Infrastructure.Validators;
 
 namespace Niko.Fire.Accounts.Commands;
 
@@ -8,7 +8,7 @@ public class CreateAccountHandler(AccountRepository accountRepository, CreateAcc
 {
     public async Task<CreateAccountResponse> Handle(CreateAccount request, CancellationToken cancellationToken)
     {
-        _ = await validator.ValidateAsync(request, cancellationToken);
+        _ = await validator.ValidateAsync(request, options => options.ThrowOnFailures(), cancellationToken);
 
         var account = new Account
         {

@@ -9,7 +9,7 @@ public class DeleteAccountHandler(AccountRepository accountRepository, DeleteAcc
     public async Task<DeleteAccountResponse> Handle(DeleteAccount request, CancellationToken cancellationToken)
     {
         var accountToBeDeleted = await accountRepository.GetItemAsync(request.Id);
-        _ = await validator.ValidateAsync((request, accountToBeDeleted), cancellationToken);
+        _ = await validator.ValidateAsync((request, accountToBeDeleted), options => options.ThrowOnFailures(), cancellationToken);
         
         var result = await accountRepository.DeleteItemAsync(accountToBeDeleted!);
 

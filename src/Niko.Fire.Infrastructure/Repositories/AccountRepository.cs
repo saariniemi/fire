@@ -44,11 +44,7 @@ public class AccountRepository(IConfiguration configuration)
         var database = await Init(configuration.DatabasePath);
 
         var accountValidator = new AccountValidator(this);
-        var accountValidationResult = await accountValidator.ValidateAsync(item);
-        if (!accountValidationResult.IsValid)
-        {
-            throw new AccountValidationException(accountValidationResult.Errors);
-        }
+        _ = await accountValidator.ValidateAsync(item, options => options.ThrowOnFailures());
         
         if (item.Id != Guid.Empty)
         {
