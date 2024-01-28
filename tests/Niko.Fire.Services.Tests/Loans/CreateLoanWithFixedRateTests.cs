@@ -1,8 +1,5 @@
 using MediatR;
-using Niko.Fire.Services.Accounts.Requests;
-using Niko.Fire.Infrastructure;
 using Niko.Fire.Services.Loans.Commands;
-using Account = Niko.Fire.Services.Accounts.Requests.Account;
 
 
 namespace Niko.Fire.Services.Tests;

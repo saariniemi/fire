@@ -1,10 +1,9 @@
 using FluentValidation;
 using FluentValidation.Results;
-using Niko.Fire.Infrastructure;
 
 namespace Niko.Fire.Services.Accounts.Commands;
 
-public class DeleteAccountValidator : AbstractValidator<(DeleteAccount request, Account? accountToBeDeleted)>
+public class DeleteAccountValidator : AbstractValidator<(DeleteAccount request, Infrastructure.Account? accountToBeDeleted)>
 {
     public DeleteAccountValidator()
     {
@@ -13,7 +12,7 @@ public class DeleteAccountValidator : AbstractValidator<(DeleteAccount request, 
         RuleFor(x => x.request.Name).Equal(x => x.accountToBeDeleted!.Name).WithMessage("Invalid name");
     }
 
-    protected override void RaiseValidationException(ValidationContext<(DeleteAccount request, Account? accountToBeDeleted)> context, ValidationResult result)
+    protected override void RaiseValidationException(ValidationContext<(DeleteAccount request, Infrastructure.Account? accountToBeDeleted)> context, ValidationResult result)
     {
         throw new DeleteAccountException(result.Errors);
     }

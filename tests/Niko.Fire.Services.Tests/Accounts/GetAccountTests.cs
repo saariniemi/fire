@@ -1,7 +1,9 @@
-namespace Niko.Fire.Services.Tests;
+using Niko.Fire.Services.Accounts;
 using MediatR;
-using Accounts.Requests;
-using Loans.Commands;
+using Niko.Fire.Services.Accounts.Requests;
+using Niko.Fire.Services.Loans.Commands;
+
+namespace Niko.Fire.Services.Tests;
 
 public class GetAccountTests(IMediator mediator)
 {

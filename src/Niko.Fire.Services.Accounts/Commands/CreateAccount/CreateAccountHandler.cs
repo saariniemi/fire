@@ -10,7 +10,7 @@ public class CreateAccountHandler(AccountRepository accountRepository, CreateAcc
     {
         _ = await validator.ValidateAsync(request, options => options.ThrowOnFailures(), cancellationToken);
 
-        var account = new Account
+        var account = new Infrastructure.Account
         {
             Name = request.Name
         };
