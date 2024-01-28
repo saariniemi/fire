@@ -3,7 +3,7 @@ using Niko.Fire.Accounts;
 using Niko.Fire.Loans;
 using Niko.Fire.Infrastructure;
 
-namespace Niko.Fire.Loan.Tests;
+namespace Niko.Fire.Services.Tests;
 
 public class Startup
 {

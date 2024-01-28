@@ -1,5 +1,7 @@
 using Niko.Fire.Infrastructure.Constants;
 using SQLite;
+using SQLiteNetExtensions.Extensions;
+using SQLiteNetExtensionsAsync.Extensions;
 
 namespace Niko.Fire.Infrastructure;
 
@@ -20,6 +22,7 @@ public class LoanRepository(IConfiguration configuration)
         }
 
         _database = new SQLiteAsyncConnection(databasePath, Configuration.Flags);
+        await _database.CreateTableAsync<Account>();
         await _database.CreateTableAsync<Loan>();
         return _database;
     }
@@ -27,21 +30,20 @@ public class LoanRepository(IConfiguration configuration)
     public async Task<Loan?> GetItemAsync(Guid id)
     {
         var database = await Init(configuration.DatabasePath);
-        return await database.Table<Loan>().Where(i => i.Id == id).FirstOrDefaultAsync();
+        return await database.GetAsync<Loan>(id);
     }
     
-    public async Task<object> SaveItemAsync(Loan item)
+    public async Task SaveItemAsync(Loan item)
     {
         var database = await Init(configuration.DatabasePath);
         
         if (item.Id != Guid.Empty)
         {
             item.Id = Guid.NewGuid();
-            return await database.UpdateAsync(item);
+            await database.UpdateWithChildrenAsync(item);
         }
-
-        item.Id = Guid.NewGuid();
-        return await database.InsertAsync(item);
+        
+        await database.InsertWithChildrenAsync(item, recursive: true);
     }
     
     public async Task<int> DeleteItemAsync(Loan item)

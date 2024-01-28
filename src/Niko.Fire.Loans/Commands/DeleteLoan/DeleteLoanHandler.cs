@@ -8,10 +8,26 @@ public class DeleteLoanHandler(LoanRepository loanRepository, DeleteLoanValidato
 {
     public async Task<DeleteLoanResponse> Handle(DeleteLoan request, CancellationToken cancellationToken)
     {
-        var accountToBeDeleted = await loanRepository.GetItemAsync(request.Id);
-        _ = await validator.ValidateAsync((request, accountToBeDeleted), options => options.ThrowOnFailures(), cancellationToken);
+        if (loanRepository == null)
+        {
+            throw new Exception("!");
+        }
         
-        var result = await loanRepository.DeleteItemAsync(accountToBeDeleted!);
+        if (validator == null)
+        {
+            throw new Exception("!");
+        }
+        
+        var loanToBeDeleted = await loanRepository.GetItemAsync(request.Id);
+        
+        if (loanToBeDeleted == null)
+        {
+            throw new Exception("!");
+        }
+        
+        _ = await validator.ValidateAsync((request, loanToBeDeleted), options => options.ThrowOnFailures(), cancellationToken);
+        
+        var result = await loanRepository.DeleteItemAsync(loanToBeDeleted!);
 
         return new DeleteLoanResponse(request)
         {

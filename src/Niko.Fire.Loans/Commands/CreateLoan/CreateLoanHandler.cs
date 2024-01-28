@@ -17,14 +17,19 @@ public class CreateLoanHandler(LoanRepository loanRepository, CreateLoanValidato
             PrincipalAmount = request.PrincipalAmount,
             RemainingBalance = request.RemainingBalance,
             OriginationDate = request.OriginationDate,
-            MaturityDate = request.MaturityDate
+            MaturityDate = request.MaturityDate,
+            Account = new Account
+            {
+                Name = request.Name
+            }
         };
         
-        var result = await loanRepository.SaveItemAsync(loan);
+        await loanRepository.SaveItemAsync(loan);
 
         return new CreateLoanResponse(request)
         {
-            Id = loan.Id
+            Id = loan.Id,
+            AccountId = loan.Account.Id
         };
     }
 }

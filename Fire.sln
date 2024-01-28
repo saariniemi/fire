@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Accounts.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Loans", "src\Niko.Fire.Loans\Niko.Fire.Loans.csproj", "{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Loan.Tests", "tests\Niko.Fire.Loan.Tests\Niko.Fire.Loan.Tests.csproj", "{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Tests", "tests\Niko.Fire.Services.Tests\Niko.Fire.Services.Tests.csproj", "{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

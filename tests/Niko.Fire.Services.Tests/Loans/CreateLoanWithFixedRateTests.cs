@@ -1,8 +1,11 @@
 using MediatR;
+using Niko.Fire.Accounts.Requests;
 using Niko.Fire.Infrastructure;
 using Niko.Fire.Loans.Commands;
+using Account = Niko.Fire.Accounts.Requests.Account;
 
-namespace Niko.Fire.Loan.Tests;
+
+namespace Niko.Fire.Services.Tests;
 
 public class CreateLoanWithFixedRateTests(IMediator mediator)
 {

@@ -1,17 +1,14 @@
 using MediatR;
-using Niko.Fire.Accounts.Commands;
-using Niko.Fire.Infrastructure;
 using Niko.Fire.Loans.Commands;
-using DeleteLoanHandler = Niko.Fire.Accounts.Commands.DeleteLoanHandler;
 
-namespace Niko.Fire.Loans.Tests;
+namespace Niko.Fire.Services.Tests;
 
-public class DeleteLoanHandlerTests(IMediator mediator)
+public class DeleteLoanTests(IMediator mediator)
 {
     [Fact]
     public async Task Should_Return_NumbersOfRowsDeleted()
     {
-        var req = new CreateLoan()
+        var createLoan = new CreateLoan()
         {
             Name = "SBAB",
             OriginationDate = DateTime.Now,
@@ -20,12 +17,12 @@ public class DeleteLoanHandlerTests(IMediator mediator)
             RemainingBalance = 500000
         };
         
-        var createLoanResponse = await mediator.Send(req, CancellationToken.None);
+        var setup = await mediator.Send(createLoan, CancellationToken.None);
         
         // Arrange
         var request = new DeleteLoan()
         {
-            Id = createLoanResponse.Id,
+            Id = setup.Id,
             Name = "SBAB"
         };
         
