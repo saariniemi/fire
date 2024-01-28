@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Niko.Fire.Accounts\Niko.Fire.Accounts.csproj" />
+      <ProjectReference Include="..\..\src\Niko.Fire.Services.Accounts\Niko.Fire.Services.Accounts.csproj" />
     </ItemGroup>
 
 </Project>

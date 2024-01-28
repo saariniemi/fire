@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using Niko.Fire.Accounts;
+using Niko.Fire.Services.Accounts;
 using Niko.Fire.Infrastructure;
 using Niko.Fire.View.ViewModels;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
@@ -25,7 +25,7 @@ public static class MauiProgram
 
         builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Startup).Assembly));
 
-        // Setup Niko.Fire.Accounts
+        // Setup Niko.Fire.Services.Accounts
         builder.Services.AddAccount();
         
         // Setup Niko.Fire.Infrastructure

@@ -1,7 +1,7 @@
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using MediatR;
-using Niko.Fire.Accounts.Commands;
+using Niko.Fire.Services.Accounts.Commands;
 
 namespace Niko.Fire.View.ViewModels;
 

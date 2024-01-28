@@ -1,5 +1,5 @@
 using MediatR;
-using Niko.Fire.Loans.Commands;
+using Niko.Fire.Services.Loans.Commands;
 
 namespace Niko.Fire.Services.Tests;
 

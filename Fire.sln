@@ -4,7 +4,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{224FB9C5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.View", "src\Niko.Fire.View\Niko.Fire.View.csproj", "{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Accounts", "src\Niko.Fire.Accounts\Niko.Fire.Accounts.csproj", "{A6CDF38D-DC89-4A97-8F23-488B6B7901E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Accounts", "src\Niko.Fire.Services.Accounts\Niko.Fire.Services.Accounts.csproj", "{A6CDF38D-DC89-4A97-8F23-488B6B7901E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Infrastructure", "src\Niko.Fire.Infrastructure\Niko.Fire.Infrastructure.csproj", "{85265E66-5CB5-4488-85DC-0701D971BF0C}"
 EndProject
@@ -16,9 +16,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Accounts.Tests", "tests\Niko.Fire.Accounts.Tests\Niko.Fire.Accounts.Tests.csproj", "{406158FF-4CA9-4B7C-950F-6CE5036276CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Loans", "src\Niko.Fire.Loans\Niko.Fire.Loans.csproj", "{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Loans", "src\Niko.Fire.Services.Loans\Niko.Fire.Services.Loans.csproj", "{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Tests", "tests\Niko.Fire.Services.Tests\Niko.Fire.Services.Tests.csproj", "{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services", "Niko.Fire.Services\Niko.Fire.Services.csproj", "{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{406158FF-4CA9-4B7C-950F-6CE5036276CD} = {224FB9C5-E708-47DF-AEF1-5E05262884BC}

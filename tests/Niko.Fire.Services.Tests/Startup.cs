@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
-using Niko.Fire.Accounts;
-using Niko.Fire.Loans;
+using Niko.Fire.Services.Accounts;
+using Niko.Fire.Services.Loans;
 using Niko.Fire.Infrastructure;
 
 namespace Niko.Fire.Services.Tests;
@@ -11,7 +11,7 @@ public class Startup
     
     public void ConfigureServices(IServiceCollection services)
     {
-        // Setup Niko.Fire.Accounts
+        // Setup Niko.Fire.Services.Accounts
         services.AddAccount();
         services.AddLoan();
         
