@@ -24,6 +24,12 @@ public class LoanRepository(IConfiguration configuration)
         return _database;
     }
     
+    public async Task<Loan?> GetItemAsync(Guid id)
+    {
+        var database = await Init(configuration.DatabasePath);
+        return await database.Table<Loan>().Where(i => i.Id == id).FirstOrDefaultAsync();
+    }
+    
     public async Task<object> SaveItemAsync(Loan item)
     {
         var database = await Init(configuration.DatabasePath);
@@ -36,5 +42,12 @@ public class LoanRepository(IConfiguration configuration)
 
         item.Id = Guid.NewGuid();
         return await database.InsertAsync(item);
+    }
+    
+    public async Task<int> DeleteItemAsync(Loan item)
+    {
+        var database = await Init(configuration.DatabasePath);
+        
+        return await database.DeleteAsync(item);
     }
 }

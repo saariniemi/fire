@@ -4,7 +4,7 @@ using Niko.Fire.Infrastructure;
 
 namespace Niko.Fire.Accounts.Commands;
 
-public class DeleteAccountHandler(AccountRepository accountRepository, DeleteAccountValidator validator) : IRequestHandler<DeleteAccount, DeleteAccountResponse>
+public class DeleteLoanHandler(AccountRepository accountRepository, DeleteAccountValidator validator) : IRequestHandler<DeleteAccount, DeleteAccountResponse>
 {
     public async Task<DeleteAccountResponse> Handle(DeleteAccount request, CancellationToken cancellationToken)
     {
