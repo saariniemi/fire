@@ -9,6 +9,7 @@ public static class DatabaseServiceCollectionExtensions
     {
         services.AddSingleton<AccountRepository>();
         services.AddSingleton<LoanRepository>();
+        services.AddSingleton<TransactionRepository>();
         
         return services;
     }

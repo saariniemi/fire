@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Requests\GetTransactionsForAccount\" />
+      <Folder Include="Requests\GetTransaction\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Niko.Fire.Services\Niko.Fire.Services.csproj" />
+      <ProjectReference Include="..\src\Niko.Fire.Infrastructure\Niko.Fire.Infrastructure.csproj" />
+      <ProjectReference Include="..\src\Niko.Fire.Services.Accounts\Niko.Fire.Services.Accounts.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Class1.cs" />
+    </ItemGroup>
+
+</Project>

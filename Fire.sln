@@ -14,13 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 		xunit.runner.json = xunit.runner.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Accounts.Tests", "tests\Niko.Fire.Accounts.Tests\Niko.Fire.Accounts.Tests.csproj", "{406158FF-4CA9-4B7C-950F-6CE5036276CD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Loans", "src\Niko.Fire.Services.Loans\Niko.Fire.Services.Loans.csproj", "{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Tests", "tests\Niko.Fire.Services.Tests\Niko.Fire.Services.Tests.csproj", "{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services", "Niko.Fire.Services\Niko.Fire.Services.csproj", "{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Transactions", "Niko.Fire.Services.Transactions\Niko.Fire.Services.Transactions.csproj", "{899B9E53-578F-4AC2-97FD-D66387C397D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +40,6 @@ Global
 		{85265E66-5CB5-4488-85DC-0701D971BF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85265E66-5CB5-4488-85DC-0701D971BF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85265E66-5CB5-4488-85DC-0701D971BF0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{406158FF-4CA9-4B7C-950F-6CE5036276CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{406158FF-4CA9-4B7C-950F-6CE5036276CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{406158FF-4CA9-4B7C-950F-6CE5036276CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{406158FF-4CA9-4B7C-950F-6CE5036276CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,9 +52,12 @@ Global
 		{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899B9E53-578F-4AC2-97FD-D66387C397D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899B9E53-578F-4AC2-97FD-D66387C397D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899B9E53-578F-4AC2-97FD-D66387C397D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899B9E53-578F-4AC2-97FD-D66387C397D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{406158FF-4CA9-4B7C-950F-6CE5036276CD} = {224FB9C5-E708-47DF-AEF1-5E05262884BC}
 		{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B} = {224FB9C5-E708-47DF-AEF1-5E05262884BC}
 	EndGlobalSection
 EndGlobal
