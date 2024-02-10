@@ -8,13 +8,12 @@ namespace Niko.Fire.Services.Tests;
 public class CreateTransactionTests(IMediator mediator)
 {
     [Fact]
-    public async Task Should()
+    public async Task Should_ValidGuid_After_TransactionCreation()
     {
         // Assign
         var request = new CreateTransaction
         {
             Account = new Account { Id = Guid.NewGuid() },
-            Tags = ["LUNCH"],
             Amount = 120,
             Description = "",
             Date = DateTime.Now

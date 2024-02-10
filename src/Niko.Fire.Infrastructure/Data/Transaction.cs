@@ -11,6 +11,11 @@ public class Transaction
     public string? Description { get; set; }
     public decimal Amount { get; set; }
     public DateTime Date { get; set; }
+    
+    [TextBlob("TagBlob")]
+    public List<string> Tags { get; set; }
+    
+    public string TagBlob { get; set; } // serialized 
 
 
     [ForeignKey(typeof(Account))]
@@ -18,4 +23,5 @@ public class Transaction
 
     [ManyToOne]
     public Account Account { get; set; }
+    
 }

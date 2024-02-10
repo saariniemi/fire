@@ -1,4 +1,5 @@
 using Niko.Fire.Infrastructure.Constants;
+using Niko.Fire.Infrastructure.Interfaces;
 using SQLite;
 using SQLiteNetExtensionsAsync.Extensions;
 
@@ -21,7 +22,6 @@ public class TransactionRepository(IConfiguration configuration)
         }
 
         _database = new SQLiteAsyncConnection(databasePath, Configuration.Flags);
-        await _database.CreateTableAsync<Tag>();
         await _database.CreateTableAsync<Transaction>();
         return _database;
     }
@@ -37,5 +37,11 @@ public class TransactionRepository(IConfiguration configuration)
         }
         
         await database.InsertWithChildrenAsync(item, recursive: true);
+    }
+    
+    public async Task<List<Transaction>> GetItemsAsync(IAccount account)
+    {
+        var database = await Init(configuration.DatabasePath);
+        return await database.Table<Transaction>().Where(i => i.AccountId == account.Id).ToListAsync();
     }
 }
