@@ -5,7 +5,6 @@ namespace Niko.Fire.Services.Tests;
 
 public class CreateAccountTests(IMediator mediator)
 {
-
     [Fact]
     public async Task Should_Return_ValidGuid_After_AccountCreation()
     {
