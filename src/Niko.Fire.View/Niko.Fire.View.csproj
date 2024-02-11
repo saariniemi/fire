@@ -65,4 +65,17 @@
       <ProjectReference Include="..\Niko.Fire.Infrastructure\Niko.Fire.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <MauiXaml Update="Views\Setup\SetupShell.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Setup\SetupShell.xaml.cs">
+        <DependentUpon>SetupShell.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
 </Project>

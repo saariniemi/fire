@@ -1,15 +1,167 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="Niko.Fire.View.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Niko.Fire.View"
-    Shell.FlyoutBehavior="Disabled"
-    Title="Niko.Fire.View">
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell x:Class="Niko.Fire.View.AppShell" 
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Niko.Fire.View"
+       xmlns:views="clr-namespace:Niko.Fire.View.Views"
+       xmlns:controls="clr-namespace:Xaminals.Controls"
+       FlyoutHeaderBehavior="CollapseOnScroll"
+       Shell.FlyoutBehavior="Locked"
+       Title="Niko.Fire.View">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <!-- Template for FlyoutHeader -->
+    <!-- Not required, as the FlyoutHeader is set above -->
+    <!--    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black"
+                  HeightRequest="200">
+                <Image Aspect="AspectFill" 
+                       Source="xamarinstore.jpg" 
+                       Opacity="0.6" />
+                <Label Text="Animals" 
+                       TextColor="White" 
+                       FontAttributes="Bold" 
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Grid>            
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>-->
+
+    <!-- Template for FlyoutFooter -->
+    <!-- Not required, as the FlyoutFooter is set above -->
+    <!--<Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Label Text="Xaminals"
+                       TextColor="GhostWhite"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                       TextColor="GhostWhite"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>-->
+
+    <!-- FlyoutContent -->
+    <!-- Not required, just an example -->
+    <!--<Shell.FlyoutContent>
+        <CollectionView BindingContext="{x:Reference shell}"
+                        IsGrouped="True"
+                        ItemsSource="{Binding FlyoutItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Title}"
+                           TextColor="White"
+                           FontSize="20" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Shell.FlyoutContent>-->
+
+    <!-- Template for FlyoutContent -->
+    <!-- Not required, just an example -->
+    <!--<Shell.FlyoutContentTemplate>
+        <DataTemplate>
+            <CollectionView BindingContext="{x:Reference shell}"
+                            IsGrouped="True"
+                            ItemsSource="{Binding FlyoutItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Title}"
+                               TextColor="White"
+                               FontSize="20" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </DataTemplate>
+    </Shell.FlyoutContentTemplate>-->
+
+    <!-- Template each FlyoutItem -->
+    <!--    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" /> 
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>-->
+
+    <!-- Template each MenuItem -->
+    <!--    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image Source="{Binding Icon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" /> 
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>-->
+
+    <ShellContent Route="graphs"
+                  Title="Graphs"
+                  ContentTemplate="{DataTemplate views:GraphsPage}" />
+    
+    <ShellContent Route="tasks"
+                  Title="Tasks"
+                  ContentTemplate="{DataTemplate views:TasksPage}" />
+    
+    <ShellContent Route="accounts"
+                  Title="Account 1..N"
+                  ContentTemplate="{DataTemplate views:AccountTransactionPage}" />
+    
+    <ShellContent Route="loans"
+                  Title="Loans 1..2"
+                  ContentTemplate="{DataTemplate views:LoanDetailsPage}" />
+    
+    <ShellContent Route="Setup"
+                  Title="Setup"
+                  ContentTemplate="{DataTemplate views:SetupPage}" />
+
+    <ShellContent Route="about"
+                  Title="About"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+
+    <MenuItem Text="Help"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" />
 
 </Shell>
+
+
+<!-- -->
+<!-- <?xml version="1.0" encoding="UTF-8" ?> -->
+<!-- <Shell -->
+<!--     x:Class="Niko.Fire.View.AppShell" -->
+<!--     xmlns="http://schemas.microsoft.com/dotnet/2021/maui" -->
+<!--     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" -->
+<!--     xmlns:local="clr-namespace:Niko.Fire.View" -->
+<!--     Shell.FlyoutBehavior="Disabled" -->
+<!--     Title="Niko.Fire.View"> -->
+<!-- -->
+<!--     <ShellContent -->
+<!--         Title="Home" -->
+<!--         ContentTemplate="{DataTemplate local:MainPage}" -->
+<!--         Route="MainPage" /> -->
+<!-- -->
+<!-- </Shell> -->
+<!-- -->
+<!-- -->
+<!-- -->

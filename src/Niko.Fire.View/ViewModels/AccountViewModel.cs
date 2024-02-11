@@ -18,6 +18,6 @@ public class AccountViewModel
 
     private async Task Save()
     {
-        await _mediator.Send(new CreateAccount { Name = "Test 1" });
+        await _mediator.Send(new CreateAccount { Name = "Test 2" });
     }
 }
