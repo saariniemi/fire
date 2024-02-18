@@ -55,14 +55,15 @@
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)"/>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Niko.Fire.Services.Accounts\Niko.Fire.Services.Accounts.csproj" />
       <ProjectReference Include="..\Niko.Fire.Infrastructure\Niko.Fire.Infrastructure.csproj" />
+      <ProjectReference Include="..\Niko.Fire.Services.Loans\Niko.Fire.Services.Loans.csproj" />
     </ItemGroup>
 
     <ItemGroup>

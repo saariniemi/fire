@@ -1,12 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{224FB9C5-E708-47DF-AEF1-5E05262884BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.View", "src\Niko.Fire.View\Niko.Fire.View.csproj", "{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.View", "src\Niko.Fire.View\Niko.Fire.View.csproj", "{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Accounts", "src\Niko.Fire.Services.Accounts\Niko.Fire.Services.Accounts.csproj", "{A6CDF38D-DC89-4A97-8F23-488B6B7901E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.Services.Accounts", "src\Niko.Fire.Services.Accounts\Niko.Fire.Services.Accounts.csproj", "{A6CDF38D-DC89-4A97-8F23-488B6B7901E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Infrastructure", "src\Niko.Fire.Infrastructure\Niko.Fire.Infrastructure.csproj", "{85265E66-5CB5-4488-85DC-0701D971BF0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.Infrastructure", "src\Niko.Fire.Infrastructure\Niko.Fire.Infrastructure.csproj", "{85265E66-5CB5-4488-85DC-0701D971BF0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{5712A1A9-DF40-41F1-B277-CB315ED2CA91}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,15 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 		xunit.runner.json = xunit.runner.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Loans", "src\Niko.Fire.Services.Loans\Niko.Fire.Services.Loans.csproj", "{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.Services.Loans", "src\Niko.Fire.Services.Loans\Niko.Fire.Services.Loans.csproj", "{4B58CE03-A3A5-4A14-A96D-4F34B7A7F0C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Tests", "tests\Niko.Fire.Services.Tests\Niko.Fire.Services.Tests.csproj", "{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.Services.Tests", "tests\Niko.Fire.Services.Tests\Niko.Fire.Services.Tests.csproj", "{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services", "Niko.Fire.Services\Niko.Fire.Services.csproj", "{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.Services", "Niko.Fire.Services\Niko.Fire.Services.csproj", "{861FD522-9DD1-4F19-B0E5-6F63F7C58DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Services.Transactions", "Niko.Fire.Services.Transactions\Niko.Fire.Services.Transactions.csproj", "{899B9E53-578F-4AC2-97FD-D66387C397D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.Services.Transactions", "Niko.Fire.Services.Transactions\Niko.Fire.Services.Transactions.csproj", "{899B9E53-578F-4AC2-97FD-D66387C397D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niko.Fire.Architecture", "Niko.Fire.Architecture\Niko.Fire.Architecture.csproj", "{C699A32F-4300-4C12-95CC-9D9408679491}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niko.Fire.Architecture", "Niko.Fire.Architecture\Niko.Fire.Architecture.csproj", "{C699A32F-4300-4C12-95CC-9D9408679491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +35,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12A8ED0F-DB85-4311-B113-98C0DF15B2F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A6CDF38D-DC89-4A97-8F23-488B6B7901E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -62,6 +66,9 @@ Global
 		{C699A32F-4300-4C12-95CC-9D9408679491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C699A32F-4300-4C12-95CC-9D9408679491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C699A32F-4300-4C12-95CC-9D9408679491}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{392B3D5D-7DF7-4A27-A4AE-F2B6CD1E445B} = {224FB9C5-E708-47DF-AEF1-5E05262884BC}

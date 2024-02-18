@@ -2,6 +2,7 @@
 using Niko.Fire.Infrastructure.Constants;
 using Niko.Fire.Infrastructure.Validators;
 using SQLite;
+using SQLiteNetExtensionsAsync.Extensions;
 
 namespace Niko.Fire.Infrastructure;
 
@@ -24,6 +25,12 @@ public class AccountRepository(IConfiguration configuration)
         _database = new SQLiteAsyncConnection(databasePath, Configuration.Flags);
         await _database.CreateTableAsync<Account>();
         return _database;
+    }
+
+    public async Task<List<Account>> GetItemsAsync()
+    {
+        var database = await Init(configuration.DatabasePath);
+        return await database.Table<Account>().ToListAsync();
     }
     
     public async Task<Account?> GetByNameAsync(string name)

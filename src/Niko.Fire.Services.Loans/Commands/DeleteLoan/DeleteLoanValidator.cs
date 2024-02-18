@@ -4,7 +4,7 @@ using Niko.Fire.Infrastructure;
 
 namespace Niko.Fire.Services.Loans.Commands;
 
-public class DeleteLoanValidator : AbstractValidator<(DeleteLoan request, Loan? loanToBeDeleted)>
+public class DeleteLoanValidator : AbstractValidator<(DeleteLoan request, Infrastructure.Loan? loanToBeDeleted)>
 {
     public DeleteLoanValidator()
     {
@@ -13,7 +13,7 @@ public class DeleteLoanValidator : AbstractValidator<(DeleteLoan request, Loan? 
         RuleFor(x => x.request.Name).Equal(x => x.loanToBeDeleted!.Name).WithMessage("Invalid name");
     }
 
-    protected override void RaiseValidationException(ValidationContext<(DeleteLoan request, Loan? loanToBeDeleted)> context, ValidationResult result)
+    protected override void RaiseValidationException(ValidationContext<(DeleteLoan request, Infrastructure.Loan? loanToBeDeleted)> context, ValidationResult result)
     {
         throw new DeleteLoanException(result.Errors);
     }

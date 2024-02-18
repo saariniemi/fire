@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\SetCurrentInterestRate\" />
       <Folder Include="Commands\SetRecurringDownPayment\" />
     </ItemGroup>
 

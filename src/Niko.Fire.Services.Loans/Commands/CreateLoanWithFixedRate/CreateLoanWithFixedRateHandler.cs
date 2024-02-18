@@ -11,7 +11,7 @@ public class CreateLoanWithFixedRateHandler(ISender sender, LoanRepository loanR
     {
         _ = await validator.ValidateAsync(request, options => options.ThrowOnFailures(), cancellationToken);
         
-        var createLoan = new CreateLoan
+        var createLoan = new SetCurrentInterestRate
         {
             Name = request.Name,
             PrincipalAmount = request.PrincipalAmount,

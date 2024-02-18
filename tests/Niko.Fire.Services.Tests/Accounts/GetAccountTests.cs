@@ -11,7 +11,7 @@ public class GetAccountTests(IMediator mediator)
     public async Task Should_Return_Account_After_CreateLoan()
     {
         // Arrange
-        var createLoan = new CreateLoan()
+        var createLoan = new SetCurrentInterestRate()
         {
             Name = "KLARNA",
             PrincipalAmount = 1000,
@@ -33,8 +33,5 @@ public class GetAccountTests(IMediator mediator)
         // Assert
         Assert.IsType<Account>(result);
         Assert.Equal("KLARNA", result.Name);
-        
-        
-        
     }
 }

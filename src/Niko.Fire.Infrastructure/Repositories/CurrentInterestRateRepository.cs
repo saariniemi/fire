@@ -1,11 +1,9 @@
 using Niko.Fire.Infrastructure.Constants;
 using SQLite;
-using SQLiteNetExtensions.Extensions;
-using SQLiteNetExtensionsAsync.Extensions;
 
 namespace Niko.Fire.Infrastructure;
 
-public class LoanRepository(IConfiguration configuration)
+public class CurrentInterestRateRepository(IConfiguration configuration)
 {
     private static SQLiteAsyncConnection? _database;
 
@@ -22,40 +20,32 @@ public class LoanRepository(IConfiguration configuration)
         }
 
         _database = new SQLiteAsyncConnection(databasePath, Configuration.Flags);
-        await _database.CreateTableAsync<Account>();
-        await _database.CreateTableAsync<Loan>();
+        await _database.CreateTableAsync<CurrentInterestRate>();
         return _database;
     }
-    
-    public async Task<List<Loan>> GetItemsAsync()
+
+    public async Task<List<CurrentInterestRate>> GetItemsAsync()
     {
         var database = await Init(configuration.DatabasePath);
-        return await database.Table<Loan>().ToListAsync();
+        return await database.Table<CurrentInterestRate>().ToListAsync();
     }
     
-    public async Task<Loan?> GetItemAsync(Guid id)
+    public async Task<CurrentInterestRate?> GetItemAsync(Guid id)
     {
         var database = await Init(configuration.DatabasePath);
-        return await database.GetAsync<Loan>(id);
+        return await database.GetAsync<CurrentInterestRate>(id);
     }
     
-    public async Task SaveItemAsync(Loan item)
+    public async Task SaveItemAsync(CurrentInterestRate item)
     {
         var database = await Init(configuration.DatabasePath);
         
         if (item.Id != Guid.Empty)
         {
             item.Id = Guid.NewGuid();
-            await database.UpdateWithChildrenAsync(item);
+            await database.UpdateAsync(item);
         }
         
-        await database.InsertWithChildrenAsync(item, recursive: true);
-    }
-    
-    public async Task<int> DeleteItemAsync(Loan item)
-    {
-        var database = await Init(configuration.DatabasePath);
-        
-        return await database.DeleteAsync(item);
+        await database.InsertAsync(item);
     }
 }
