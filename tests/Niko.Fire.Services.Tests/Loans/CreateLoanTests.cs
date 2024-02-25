@@ -4,27 +4,22 @@ using Niko.Fire.Services.Loans.Commands;
 
 namespace Niko.Fire.Services.Tests;
 
-public class CreateLoanWithFixedRateTests(IMediator mediator)
+public class CreateLoanTests(IMediator mediator)
 {
     [Fact]
     public async Task Should_Return_ValidGuid_After_LoanCreation()
     {
         // Arrange
-        var request = new CreateLoanWithFixedRate
+        var request = new CreateLoan
         {
-            Name = "SBAB",
-            PrincipalAmount = 1000,
-            OriginationDate = DateTime.Now,
-            Rate = 0.01M,
-            PeriodInYears = 1,
-            Amortization = 1000
+            Name = "SBAB"
         };
         
         // Act
         var result = await mediator.Send(request, CancellationToken.None);
 
         // Assert
-        Assert.IsType<CreateLoanWithFixedRateResponse>(result);
+        Assert.IsType<CreateLoanResponse>(result);
         Assert.Equal(request, result.Request);
         Assert.NotEqual(Guid.Empty, result.Id);
     }

@@ -39,13 +39,15 @@ public static class MauiProgram
 
         builder.Services.AddTransient<MainPage>();
         
-        builder.Services.AddSingleton<AccountViewModel>();
+        // builder.Services.AddSingleton<AccountViewModel>();
         //builder.Services.AddSingleton<MyViewModel>();
 
         builder.Services.AddSingleton<AccountsViewModel>();
         builder.Services.AddSingleton<LoansViewModel>();
 
         builder.Services.AddTransient<SetupPage>();
+
+        builder.Services.AddTransient<SetupPage_Accounts>();
 
         //builder.Services.AddTransient<SubredditWidgetViewModel>();
 

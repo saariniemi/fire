@@ -12,6 +12,9 @@ public class Startup
     
     public void ConfigureServices(IServiceCollection services)
     {
+        // REMOVE DATABASE IF EXISTS
+        File.Delete(Path);
+        
         // Setup Niko.Fire.Services.Accounts
         services.AddAccount();
         services.AddLoan();

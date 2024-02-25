@@ -17,6 +17,8 @@ public class LoansViewModel : INotifyPropertyChanged
     
     public ICommand CreateLoanCommand { get; }
     
+    public IAsyncRelayCommand<Loan> DeleteLoanCommand { get; }
+    
     public ObservableCollection<Loan> Loans { get; private set; } = [];
     
     private readonly IMediator _mediator;
@@ -30,6 +32,7 @@ public class LoansViewModel : INotifyPropertyChanged
         });
         
         CreateLoanCommand = new AsyncRelayCommand(CreateLoan);
+        DeleteLoanCommand = new AsyncRelayCommand<Loan>(DeleteLoan);
 
         _mediator = mediator;
     }
@@ -37,6 +40,11 @@ public class LoansViewModel : INotifyPropertyChanged
     private async Task CreateLoan()
     {
         var newLoanName = await Application.Current.MainPage.DisplayPromptAsync("Create a loan", "Enter your loan name", maxLength: 30, keyboard: Keyboard.Plain);
+
+        if (newLoanName == null)
+        {
+            return;
+        } 
         
         var command = new CreateLoan()
         {
@@ -51,6 +59,24 @@ public class LoansViewModel : INotifyPropertyChanged
             Loans.Add(loans.Single(loan => loan.Id == createLoanResponse.Id));
             OnPropertyChanged(nameof(Loans));
         }
+    }
+    
+    
+    private async Task DeleteLoan(Loan? item)
+    {
+        var command = new DeleteLoan
+        {
+            Id = item.Id,
+            Name = item.Name
+        };
+        
+        var response = await _mediator.Send(command);
+        if (response.NumberOfRowsDeleted != 1)
+        {
+            throw new Exception("Number of rows deleted was not expected after delete loan command");
+        }
+            
+        Loans.Remove(item);
     }
 
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null)

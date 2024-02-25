@@ -8,10 +8,9 @@ public partial class MainPage : ContentPage
 {
     int count = 0;
 
-    public MainPage(AccountViewModel accountViewModel)
+    public MainPage()
     {
         InitializeComponent();
-        BindingContext = accountViewModel;
     }
 
     private void OnCounterClicked(object sender, EventArgs e)

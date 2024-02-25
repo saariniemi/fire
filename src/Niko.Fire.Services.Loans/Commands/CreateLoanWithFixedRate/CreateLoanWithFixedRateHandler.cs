@@ -13,7 +13,7 @@ public class CreateLoanWithFixedRateHandler(ISender sender, LoanRepository loanR
         
         var createLoan = new SetCurrentInterestRate
         {
-            Name = request.Name,
+            LoanId = request.LoanId,
             PrincipalAmount = request.PrincipalAmount,
             RemainingBalance = RemainingBalance(),
             OriginationDate = request.OriginationDate,

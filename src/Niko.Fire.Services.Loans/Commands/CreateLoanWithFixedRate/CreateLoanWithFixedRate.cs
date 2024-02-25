@@ -10,7 +10,7 @@ public class CreateLoanWithFixedRate : IRequest<CreateLoanWithFixedRateResponse>
         public const int OneYear = 1;
     }
 
-    public required string Name { get; set; }
+    public required Guid LoanId { get; set; }
     public required decimal PrincipalAmount { get; set; }
     public required DateTime OriginationDate { get; set; }
     public required decimal Rate { get; set; }

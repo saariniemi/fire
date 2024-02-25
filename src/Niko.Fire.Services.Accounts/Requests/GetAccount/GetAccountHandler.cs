@@ -17,7 +17,8 @@ public class GetAccountHandler(AccountRepository accountRepository) : IRequestHa
         return new Account()
         {
             Id = result.Id,
-            Name = result.Name
+            Name = result.Name,
+            LoanId = result.LoanId
         };
     }
 }

@@ -8,13 +8,9 @@ public class DeleteLoanTests(IMediator mediator)
     [Fact]
     public async Task Should_Return_NumbersOfRowsDeleted()
     {
-        var createLoan = new SetCurrentInterestRate()
+        var createLoan = new CreateLoan()
         {
-            Name = "SBAB",
-            OriginationDate = DateTime.Now,
-            MaturityDate = DateTime.Now.AddMonths(3),
-            PrincipalAmount = 500000,
-            RemainingBalance = 500000
+            Name = "SBAB"
         };
         
         var setup = await mediator.Send(createLoan, CancellationToken.None);

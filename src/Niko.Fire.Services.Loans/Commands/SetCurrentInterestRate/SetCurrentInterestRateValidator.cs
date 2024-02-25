@@ -12,7 +12,7 @@ public class SetCurrentInterestRateValidator : AbstractValidator<SetCurrentInter
         RuleFor(x => x).NotNull();
         
         // RuleFor(x => x.Name).NotEmpty(); // TODO: MOVE TO ACCOUNT
-        // RuleFor(x => x.Name).Length(1, 50); // TODO: MOVE TO ACCOUNT
+        // RuleFor(x => x.Name).Length(1, 50); // TODO: MOVE TO ACCOUNT 
         
         RuleFor(x => x.PrincipalAmount).GreaterThan(0);
         

@@ -9,14 +9,19 @@ public class CreateLoanHandler(LoanRepository loanRepository) : IRequestHandler<
     {
         var loan = new Infrastructure.Loan()
         {
-            Name = request.Name
+            Name = request.Name,
+            Account = new Account
+            {
+                Name = request.Name
+            }
         };
         
         await loanRepository.SaveItemAsync(loan);
 
         return new CreateLoanResponse(request)
         {
-            Id = loan.Id
+            Id = loan.Id,
+            AccountId = loan.AccountId
         };
     }
 }

@@ -11,9 +11,6 @@ public class CreateLoanWithFixedRateValidator : AbstractValidator<CreateLoanWith
     {
         RuleFor(x => x).NotNull();
         
-        RuleFor(x => x.Name).NotEmpty();
-        RuleFor(x => x.Name).Length(1, 50);
-        
         RuleFor(x => x.PrincipalAmount).GreaterThan(0);
         
         RuleFor(x => x.OriginationDate).GreaterThanOrEqualTo(BeginningOfNineteenthCentury).WithMessage("Invalid origination date");

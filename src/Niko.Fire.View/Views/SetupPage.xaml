@@ -2,88 +2,16 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:Niko.Fire.View.ViewModels"
-             xmlns:loans="clr-namespace:Niko.Fire.Services.Loans;assembly=Niko.Fire.Services.Loans"
+             xmlns:views="clr-namespace:Niko.Fire.View.Views"
              x:Class="Niko.Fire.View.Views.SetupPage">
-    <!--<ContentPage.BindingContext>
-        <viewModels:AboutViewModel />
-    </ContentPage.BindingContext>-->
     <ContentPage.Content>
         <ScrollView >
-            <!-- <StackLayout Margin="20" x:DataType="viewModels:AccountsViewModel"> -->
-            <!--      <Grid>  -->
-            <!--          <Grid.RowDefinitions>  -->
-            <!--              <RowDefinition Height="Auto" />  -->
-            <!--              <RowDefinition Height="Auto" />  -->
-            <!--          </Grid.RowDefinitions>  -->
-            <!--          <Grid.ColumnDefinitions>  -->
-            <!--              <ColumnDefinition Width="Auto" />  -->
-            <!--              <ColumnDefinition Width="Auto" />  -->
-            <!--          </Grid.ColumnDefinitions>  -->
-            <!--          <Label Text="Previous selected item:" />  -->
-            <!--          <Label x:Name="previousSelectedItemLabel"  -->
-            <!--                 Grid.Column="1" />  -->
-            <!--          <Label Grid.Row="1"  -->
-            <!--                 Text="Current selected item:" />  -->
-            <!--          <Label x:Name="currentSelectedItemLabel"  -->
-            <!--                 Grid.Row="1"  -->
-            <!--                 Grid.Column="1" />  -->
-            <!--      </Grid>  -->
-            <!--      <CollectionView ItemsSource="{Binding Monkeys}" -->
-            <!--                      SelectionMode="Single">  -->
-            <!--          <CollectionView.ItemTemplate>  -->
-            <!--              <DataTemplate x:DataType="viewModels:MonkeyViewModel">  -->
-            <!--                  <Grid Padding="10">  -->
-            <!--                      <Label Text="{Binding Name}"   -->
-            <!--                             FontAttributes="Bold" />  -->
-            <!--                      <Label Text="{Binding Name}"  -->
-            <!--                             FontAttributes="Italic"   -->
-            <!--                             VerticalOptions="End" />  -->
-            <!--                  </Grid>  -->
-            <!--              </DataTemplate>  -->
-            <!--          </CollectionView.ItemTemplate> -->
-            <!--      </CollectionView> -->
-            <!--     <StackLayout> -->
-            <!--         <Button Text="Submit" Command="{Binding CreateAccountCommand}" /> -->
-            <!--     </StackLayout> -->
-            <!-- </StackLayout> -->
-            <StackLayout Margin="20" x:DataType="viewModels:LoansViewModel">
-                <Grid> 
-                    <Grid.RowDefinitions> 
-                        <RowDefinition Height="Auto" /> 
-                        <RowDefinition Height="Auto" /> 
-                    </Grid.RowDefinitions> 
-                    <Grid.ColumnDefinitions> 
-                        <ColumnDefinition Width="Auto" /> 
-                        <ColumnDefinition Width="Auto" /> 
-                    </Grid.ColumnDefinitions> 
-                    <Label Text="Previous selected item:" /> 
-                    <Label x:Name="previousSelectedItemLabel" 
-                           Grid.Column="1" /> 
-                    <Label Grid.Row="1" 
-                           Text="Current selected item:" /> 
-                    <Label x:Name="currentSelectedItemLabel" 
-                           Grid.Row="1" 
-                           Grid.Column="1" /> 
-                </Grid> 
-                <CollectionView ItemsSource="{Binding Loans}"
-                                SelectionMode="Single"> 
-                    <CollectionView.ItemTemplate> 
-                        <DataTemplate x:DataType="loans:Loan"> 
-                            <Grid Padding="10"> 
-                                <Label Text="{Binding Name}"  
-                                       FontAttributes="Bold" /> 
-                                <Label Text="{Binding Name}" 
-                                       FontAttributes="Italic"  
-                                       VerticalOptions="End" /> 
-                            </Grid> 
-                        </DataTemplate> 
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                <StackLayout>
-                    <Button Text="Submit" Command="{Binding CreateLoanCommand}" />
-                </StackLayout>
-            </StackLayout>
+            <VerticalStackLayout>
+                <Label>Accounts</Label>
+                <views:SetupPage_Accounts    />
+                <Label>Loans</Label>
+                <views:SetupPage_Loans />
+            </VerticalStackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
