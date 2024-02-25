@@ -61,6 +61,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Niko.Fire.Services.Transactions\Niko.Fire.Services.Transactions.csproj" />
       <ProjectReference Include="..\Niko.Fire.Services.Accounts\Niko.Fire.Services.Accounts.csproj" />
       <ProjectReference Include="..\Niko.Fire.Infrastructure\Niko.Fire.Infrastructure.csproj" />
       <ProjectReference Include="..\Niko.Fire.Services.Loans\Niko.Fire.Services.Loans.csproj" />

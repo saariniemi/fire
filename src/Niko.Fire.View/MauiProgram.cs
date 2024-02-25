@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Niko.Fire.Services.Accounts;
 using Niko.Fire.Infrastructure;
 using Niko.Fire.Services.Loans;
+using Niko.Fire.Services.Transactions.Extensions;
 using Niko.Fire.View.ViewModels;
 using Niko.Fire.View.Views;
 using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
@@ -29,9 +30,10 @@ public static class MauiProgram
 
         builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Startup).Assembly));
 
-        // Setup Niko.Fire.Services.Accounts
+        // Setup Niko.Fire.Services
         builder.Services.AddAccount();
         builder.Services.AddLoan();
+        builder.Services.AddTransaction();
         
         // Setup Niko.Fire.Infrastructure
         builder.Services.AddSingleton<Infrastructure.IConfiguration>(new InfrastructureConfiguration());
@@ -45,9 +47,12 @@ public static class MauiProgram
         builder.Services.AddSingleton<AccountsViewModel>();
         builder.Services.AddSingleton<LoansViewModel>();
 
-        builder.Services.AddTransient<SetupPage>();
+        builder.Services.AddTransient<TransactionsViewModel>();
 
+        builder.Services.AddTransient<AccountTransactionPage>();
+        builder.Services.AddTransient<SetupPage>();
         builder.Services.AddTransient<SetupPage_Accounts>();
+        builder.Services.AddTransient<SetupPage_Loans>();
 
         //builder.Services.AddTransient<SubredditWidgetViewModel>();
 

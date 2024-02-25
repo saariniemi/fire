@@ -8,8 +8,9 @@ public class Transaction
     [PrimaryKey, AutoIncrement]
     public Guid Id { get; set; }
     
-    public string? Description { get; set; }
+    public string Description { get; set; }
     public decimal Amount { get; set; }
+    public decimal? Statement { get; set; }
     public DateTime Date { get; set; }
     
     [TextBlob("TagBlob")]

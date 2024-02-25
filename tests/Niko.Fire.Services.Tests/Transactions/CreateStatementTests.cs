@@ -16,7 +16,7 @@ public class CreateStatementTests(IMediator mediator)
         var command = new CreateStatement
         {
             Account = account,
-            Amount = 100,
+            Statement = 100,
             Date = DateTime.Now
         };
         

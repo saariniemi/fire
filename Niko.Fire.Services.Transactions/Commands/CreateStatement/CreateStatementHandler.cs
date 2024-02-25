@@ -12,8 +12,8 @@ public class CreateStatementHandler(TransactionRepository transactionRepository)
         var transaction = new Infrastructure.Transaction
         {
             Account = new Account { Id = request.Account.Id },
-            Tags = new List<string> {"STATEMENT" },
-            Amount = request.Amount,
+            Tags = ["STATEMENT"],
+            Statement = request.Statement,
             Date = request.Date,
         };
         

@@ -56,7 +56,6 @@ public sealed class AccountsViewModel : INotifyPropertyChanged
         {
             var account = await _mediator.Send(new GetAccount { Id = createAccountResponse.Id });
             Accounts.Add(account);
-            OnPropertyChanged(nameof(Accounts));
         }
     }
 

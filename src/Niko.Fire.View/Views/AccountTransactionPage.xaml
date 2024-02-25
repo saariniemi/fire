@@ -2,11 +2,93 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Niko.Fire.View.ViewModels"
+             xmlns:transactions="clr-namespace:Niko.Fire.Services.Transactions;assembly=Niko.Fire.Services.Transactions"
              x:Class="Niko.Fire.View.Views.AccountTransactionPage">
     <ContentPage.Content>
-        <Label
-            Text="Account Transaction, Page!"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
+        <StackLayout Margin="20" x:DataType="viewModels:TransactionsViewModel">
+            <!-- <CollectionView ItemsSource="{Binding Transactions}" -->
+            <!--                 SelectionMode="Single"> -->
+            <!--     <CollectionView.ItemTemplate> -->
+            <!--         <DataTemplate x:DataType="transactions:Transaction"> -->
+            <!--             <Grid Padding="10"> -->
+            <!--                 <Label Text="{Binding Id}" -->
+            <!--                        FontAttributes="Bold" /> -->
+            <!--                     ~1~ <FlyoutBase.ContextFlyout> @1@ -->
+            <!--                     ~1~     <MenuFlyout> @1@ -->
+            <!--                     ~1~         <MenuFlyoutItem Text="Delete account" @1@ -->
+            <!--                     ~1~                         Command="{Binding Source={RelativeSource  AncestorType={x:Type viewModels:AccountsViewModel}}, Path=DeleteAccountCommand}" @1@ -->
+            <!--                     ~1~                         CommandParameter="{Binding}" /> @1@ -->
+            <!--                     ~1~     </MenuFlyout> @1@ -->
+            <!--                     ~1~ </FlyoutBase.ContextFlyout> @1@ -->
+            <!--             </Grid> -->
+            <!--         </DataTemplate> -->
+            <!--     </CollectionView.ItemTemplate> -->
+            <!-- </CollectionView> -->
+            <!-- <StackLayout> -->
+            <!--     <Button Text="Submit" Command="{Binding CreateTransactionCommand}" /> -->
+            <!-- </StackLayout> -->
+            <ListView ItemsSource="{Binding Transactions}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="transactions:Transaction">
+                        <ViewCell>
+                            <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0"
+                                       Grid.Row="0"
+                                       Text="{Binding Description}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Column="0"
+                                       Grid.Row="1"
+                                       Text="{Binding Date}"
+                                       FontAttributes="Italic" />
+                                <Label Grid.Column="1"
+                                       Grid.Row="0"
+                                       Text="{Binding Amount}"
+                                       FontAttributes="Italic"
+                                       HorizontalOptions="End" />
+                                <Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       Text="{Binding Statement}"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="End" />
+                            </Grid>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Edit transaction"
+                                          Clicked="MenuItem_OnClicked"
+                                          CommandParameter="{Binding}" />
+                                <MenuItem Text="Remove transaction" 
+                                          Clicked="MenuItem_OnClicked"
+                                          CommandParameter="{Binding}" />
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout BackgroundColor="Green">
+                <TableView Intent="Form">
+                    <TableRoot>
+                        <TableSection>
+                            <ViewCell>
+                                <Entry Keyboard="Numeric" Text="{Binding StatementAmount}" />
+                            </ViewCell>
+                            <ViewCell>
+                                <DatePicker Date="{Binding StatementDate}" />
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+
+

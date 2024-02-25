@@ -6,7 +6,11 @@ public static class TransactionExtensions
     {
         return new Transaction
         {
-            Id = item.Id
+            Id = item.Id,
+            Description = item.Description,
+            Amount = item.Amount,
+            Statement = item.Statement,
+            Date = item.Date
         };
     }
 }

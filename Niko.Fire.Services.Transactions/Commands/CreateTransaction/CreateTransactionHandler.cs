@@ -11,7 +11,7 @@ public class CreateTransactionHandler(TransactionRepository transactionRepositor
 
         var transaction = new Infrastructure.Transaction
         {
-            AccountId = request.Account.Id,
+            Account = new Account{ Id = request.Account.Id },
             Description = request.Description,
             Amount = request.Amount,
             Date = request.Date,

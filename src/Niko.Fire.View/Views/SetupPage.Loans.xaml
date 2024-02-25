@@ -16,7 +16,7 @@
                             <FlyoutBase.ContextFlyout>
                                 <MenuFlyout>
                                     <MenuFlyoutItem Text="Delete account"
-                                                    Command="{Binding Source={RelativeSource  AncestorType={x:Type viewModels:LoansViewModel}}, Path=DeleteLoanCommand}"
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:LoansViewModel}}, Path=DeleteLoanCommand}"
                                                     CommandParameter="{Binding}" />
                                 </MenuFlyout>
                             </FlyoutBase.ContextFlyout>

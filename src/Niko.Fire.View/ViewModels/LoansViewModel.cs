@@ -16,7 +16,6 @@ public class LoansViewModel : INotifyPropertyChanged
     public event PropertyChangedEventHandler? PropertyChanged;
     
     public ICommand CreateLoanCommand { get; }
-    
     public IAsyncRelayCommand<Loan> DeleteLoanCommand { get; }
     
     public ObservableCollection<Loan> Loans { get; private set; } = [];
@@ -57,7 +56,6 @@ public class LoansViewModel : INotifyPropertyChanged
         {
             var loans = await _mediator.Send(new GetLoans());
             Loans.Add(loans.Single(loan => loan.Id == createLoanResponse.Id));
-            OnPropertyChanged(nameof(Loans));
         }
     }
     
